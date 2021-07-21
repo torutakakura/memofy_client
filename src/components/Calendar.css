@@ -1,0 +1,167 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.calendar {
+    width: 100%;
+    height: 100%;
+    table-layout:fixed;
+}
+
+.calendar > thead > tr {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;    
+}
+
+.calendar td, .calendar th {
+    padding: .6rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;    
+}
+
+.montharea {
+    background-color: white;
+}
+
+td.day {
+    height: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+td.selected {
+    background-color: orange!important;
+    color: white;
+}
+
+.day:first-child {
+    color: red;
+}
+
+.day:last-child {
+    color: royalblue;
+}
+
+thead {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+    height : 100%;
+    top: 0;
+    text-align: center;
+    background-color: whitesmoke;
+    border-bottom: none;
+}
+
+thead::before {
+    position : absolute ;
+    top : 0 ;
+    width : 100%;
+    height : 100%;
+}
+
+/* CSSアニメーションの指定 */
+.headline{
+    position: sticky;
+    height: 110px;
+    position: -webkit-sticky;
+    z-index: 2;
+    bottom: 0;
+    text-align: center;
+    animation: SlideIn 1s;
+    width: 100%;
+    height: 130px;
+    background: whitesmoke;
+}
+
+.headline::before{
+    position: absolute;
+    bottom: 0;
+    left : 0;
+    width : 100% ;
+}
+
+.out {
+    opacity: 0;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 2;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 130px;
+    background: whitesmoke;
+    animation: SlideOut 1.3s;
+}
+
+@keyframes SlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+@keyframes SlideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    100% {
+      opacity: 0;
+      transform: translateY(300px);
+      visibility: hidden;
+    }
+
+}
+
+.title {
+    width: 100%;
+    display: table;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    background: #f4f4f4;
+    border-left: solid 1px black;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);  
+}
+
+.left-content {
+    width: 30%;
+    display: table-cell;
+}
+      
+.right-content {
+    width: 70%;
+    display: table-cell;
+    text-align : right;
+}
+
+.schedule-list {
+    padding: 0;
+}
+
+.schedule {
+    border-left: solid 6px black;
+    border-bottom: solid 2px #dadada;
+    background: whitesmoke;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    padding: 0.5em;
+    list-style-type: none!important;
+    font-weight: bold;    
+}
+
+.schedule-link {
+    text-decoration:none; 
+    display: block;
+    color: #404040;
+}
+
+.p-0 {
+    padding: 5px!important;
+}
